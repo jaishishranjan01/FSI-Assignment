@@ -8,6 +8,10 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * DTO representing equipment details returned by the service.
+ * Includes identification, availability, specifications and maintenance data.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
