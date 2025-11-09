@@ -7,6 +7,14 @@ import org.springframework.stereotype.Component;
 import java.security.Key;
 import java.util.Date;
 
+/**
+ * Utility component for creating and validating JWT tokens.
+ * - generateToken(email, role) creates a signed token with expiration.
+ * - extractClaims / extractEmail / extractRole parse and return token claims.
+ * - isTokenValid verifies token integrity and expiry.
+ *
+ * Uses io.jsonwebtoken (jjwt) and an in-memory signing key.
+ */
 @Component
 public class JwtUtil {
 
