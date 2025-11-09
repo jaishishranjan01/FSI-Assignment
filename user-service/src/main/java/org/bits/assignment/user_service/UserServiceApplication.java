@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+/**
+ * Spring Boot application entry point for the User Service microservice.
+ * Bootstraps Spring context and starts the embedded web server.
+ */
 @SpringBootApplication
 public class UserServiceApplication {
 
