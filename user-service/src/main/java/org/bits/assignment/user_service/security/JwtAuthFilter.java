@@ -13,6 +13,11 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Servlet filter that validates JWT tokens on incoming requests.
+ * If a valid token is present in the Authorization header (Bearer ...),
+ * the filter sets the Spring Security Authentication with the extracted email and role.
+ */
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
 

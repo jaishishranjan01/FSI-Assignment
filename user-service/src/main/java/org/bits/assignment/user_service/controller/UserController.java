@@ -8,6 +8,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST controller for user management operations exposed under /api/users.
+ * Endpoints include:
+ * - GET /api/users                : list all users
+ * - GET /api/users/search?q=&role: search users by name/email and filter by role
+ * - PATCH /api/users/{id}/status  : update a user's status
+ *
+ * Access to these endpoints is controlled by SecurityConfig (ADMIN role required for /api/users/**).
+ */
 @RestController
 @RequestMapping("/api/users")
 public class UserController {

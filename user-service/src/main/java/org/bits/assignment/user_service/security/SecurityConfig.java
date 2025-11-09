@@ -1,5 +1,12 @@
 package org.bits.assignment.user_service.security;
 
+/**
+ * Spring Security configuration:
+ * - Disables CSRF for API usage.
+ * - Permits /api/auth/** endpoints to be accessed without authentication.
+ * - Requires ADMIN role for /api/users/** endpoints.
+ * - Registers JwtAuthFilter before UsernamePasswordAuthenticationFilter.
+ */
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

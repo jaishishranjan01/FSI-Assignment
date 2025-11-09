@@ -3,6 +3,14 @@ package org.bits.assignment.user_service.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+/**
+ * JPA entity representing an application user.
+ * Fields:
+ * - id, name, email, password, role, status
+ * Transient fields (not persisted): activeRequests, totalBorrows
+ *
+ * Lombok is used for boilerplate (getters/setters/builders).
+ */
 @Entity
 @Table(name = "users")
 @Getter

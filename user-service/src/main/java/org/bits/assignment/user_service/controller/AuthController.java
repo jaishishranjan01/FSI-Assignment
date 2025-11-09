@@ -8,6 +8,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+/**
+ * REST controller that handles authentication-related endpoints:
+ * - /api/auth/login      : authenticate user and return JWT
+ * - /api/auth/signup     : register new user and return JWT
+ * - /api/auth/forgot-password : trigger password reset flow (dummy)
+ *
+ * This controller uses UserService for user operations and JwtUtil to create tokens.
+ */
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
