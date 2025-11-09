@@ -9,6 +9,11 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Entity representing an equipment item in inventory.
+ * Includes metadata such as name, category, quantity, location,
+ * specifications, usage guidelines and maintenance information.
+ */
 @Entity
 @Table(name = "equipment")
 @Data

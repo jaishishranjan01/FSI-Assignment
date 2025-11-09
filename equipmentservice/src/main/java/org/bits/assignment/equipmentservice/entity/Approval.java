@@ -8,6 +8,11 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+/**
+ * Entity representing an approval record for an equipment request.
+ * Stores approver information, referenced equipment, request/return dates,
+ * status, notes and creation timestamp.
+ */
 @Entity
 @Table(name = "approvals")
 @Data

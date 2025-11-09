@@ -4,6 +4,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+/**
+ * Global exception handler that maps application exceptions to HTTP responses.
+ * Handles EquipmentNotFoundException and generic exceptions to produce appropriate status codes.
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

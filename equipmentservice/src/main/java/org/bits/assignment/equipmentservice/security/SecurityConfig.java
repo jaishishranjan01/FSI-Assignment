@@ -8,6 +8,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+/**
+ * Spring Security configuration.
+ * Registers the JWT filter, password encoder and defines route authorization rules.
+ */
 public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;

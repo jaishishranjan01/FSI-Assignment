@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * DTO used to create a new Equipment record.
+ * Contains fields required when submitting a creation request for equipment.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

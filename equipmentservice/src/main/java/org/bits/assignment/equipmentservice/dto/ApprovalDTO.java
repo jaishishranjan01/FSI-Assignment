@@ -3,6 +3,12 @@ package org.bits.assignment.equipmentservice.dto;
 import lombok.Data;
 import java.time.LocalDate;
 
+/**
+ * Data Transfer Object for equipment approval requests.
+ *
+ * Contains identifying information for the request, requester and equipment,
+ * requested dates, status and administrative notes.
+ */
 @Data
 public class ApprovalDTO {
     private Long id;

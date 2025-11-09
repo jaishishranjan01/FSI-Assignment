@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+/**
+ * DTO used to create a new equipment request.
+ * Carries user, equipment, and requested date information.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -5,6 +5,10 @@ import org.bits.assignment.equipmentservice.dto.EquipmentDTO;
 
 import java.util.List;
 
+/**
+ * Service interface for managing equipment inventory.
+ * Provides methods to list, retrieve, search, create, update and delete equipment.
+ */
 public interface EquipmentService {
 
     List<EquipmentDTO> getAllEquipment();

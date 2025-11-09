@@ -6,6 +6,10 @@ import org.bits.assignment.equipmentservice.dto.RequestStatusUpdateDTO;
 
 import java.util.List;
 
+/**
+ * Service interface for creating and managing equipment requests.
+ * Allows listing requests by user, creating requests and updating request status.
+ */
 public interface RequestService {
     List<RequestDTO> getRequestsByUserId(String userId);
     RequestDTO createRequest(RequestCreateDTO dto);
