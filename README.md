@@ -1,6 +1,6 @@
-# FSI-Assignment
+# Architecture
+<img width="701" height="560" alt="Untitled Diagram drawio (1)" src="https://github.com/user-attachments/assets/7a4193d2-d8a7-47ca-a009-01c0936cd8ff" />
 
-Data Model:
 # Database Schema Documentation
 
 ## User Service Database
