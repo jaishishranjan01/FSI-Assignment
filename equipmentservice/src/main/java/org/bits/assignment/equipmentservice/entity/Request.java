@@ -8,6 +8,11 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+/**
+ * Entity representing a user's equipment request.
+ * Captures requester, equipment reference, requested/return dates,
+ * status, notes and creation timestamp.
+ */
 @Entity
 @Table(name = "requests")
 @Data
