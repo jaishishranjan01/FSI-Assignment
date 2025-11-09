@@ -15,6 +15,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Servlet filter that validates JWTs from the Authorization header and
+ * populates the Spring Security context with the authenticated principal and role.
+ */
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
 
