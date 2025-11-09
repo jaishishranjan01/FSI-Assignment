@@ -13,6 +13,10 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of RequestService that handles creation and status updates
+ * for Request entities using the RequestRepository.
+ */
 @Service
 @RequiredArgsConstructor
 public class RequestServiceImpl implements RequestService {
