@@ -12,6 +12,10 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of ApprovalService that performs CRUD and status updates
+ * on Approval entities via the ApprovalRepository.
+ */
 @Service
 @RequiredArgsConstructor
 public class ApprovalServiceImpl implements ApprovalService {
