@@ -12,6 +12,10 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of EquipmentService that manages Equipment entities using EquipmentRepository.
+ * Handles creation, retrieval, update, deletion and searching of equipment items.
+ */
 @Service
 @RequiredArgsConstructor
 public class EquipmentServiceImpl implements EquipmentService {
