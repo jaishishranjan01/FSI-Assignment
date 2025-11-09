@@ -10,6 +10,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Service layer for user operations:
+ * - signup, login, forgot password (dummy)
+ * - user listing, searching and status updates
+ *
+ * Uses UserRepository for persistence and PasswordEncoder for secure password handling.
+ */
 @Service
 public class UserService {
 
