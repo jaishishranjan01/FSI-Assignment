@@ -1,14 +1,21 @@
 package org.bits.assignment.equipmentservice.service;
 
-import org.bits.assignment.equipmentservice.entity.Equipment;
+import org.bits.assignment.equipmentservice.dto.EquipmentCreateDTO;
+import org.bits.assignment.equipmentservice.dto.EquipmentDTO;
 
 import java.util.List;
 
 public interface EquipmentService {
-    Equipment create(Equipment equipment);
-    Equipment update(Long id, Equipment equipment);
-    Equipment getById(Long id);
-    List<Equipment> getAll();
-    List<Equipment> search(String q, String category);
-    void delete(Long id);
+
+    List<EquipmentDTO> getAllEquipment();
+
+    EquipmentDTO getEquipmentById(Long id);
+
+    List<EquipmentDTO> searchEquipment(String query, String category);
+
+    EquipmentDTO createEquipment(EquipmentCreateDTO dto);
+
+    EquipmentDTO updateEquipment(Long id, EquipmentCreateDTO dto);
+
+    void deleteEquipment(Long id);
 }

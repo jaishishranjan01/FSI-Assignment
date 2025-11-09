@@ -1,13 +1,12 @@
 package org.bits.assignment.equipmentservice.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.bits.assignment.equipmentservice.entity.Approval;
-import org.bits.assignment.equipmentservice.entity.RequestStatus;
-import org.bits.assignment.equipmentservice.repository.ApprovalRepository;
+import org.bits.assignment.equipmentservice.dto.ApprovalDTO;
+import org.bits.assignment.equipmentservice.dto.ApprovalStatusUpdateDTO;
+import org.bits.assignment.equipmentservice.service.ApprovalService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -15,34 +14,28 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ApprovalController {
 
-    private final ApprovalRepository approvalRepo;
+    private final ApprovalService approvalService;
 
     @GetMapping
-    public ResponseEntity<List<Approval>> getAll(@RequestParam(required = false) String status) {
-        if (status == null) return ResponseEntity.ok(approvalRepo.findAll());
-        return ResponseEntity.ok(approvalRepo.findByStatus(status.toUpperCase()));
+    public ResponseEntity<List<ApprovalDTO>> getAllApprovals() {
+        return ResponseEntity.ok(approvalService.getAllApprovals());
+    }
+
+    @GetMapping(params = "status")
+    public ResponseEntity<List<ApprovalDTO>> getApprovalsByStatus(@RequestParam String status) {
+        return ResponseEntity.ok(approvalService.getApprovalsByStatus(status));
     }
 
     @PostMapping("/{id}/approve")
-    public ResponseEntity<Approval> approve(@PathVariable Long id) {
-        Approval a = approvalRepo.findById(id).orElseThrow();
-        a.setStatus(RequestStatus.APPROVED);
-        approvalRepo.save(a);
-        return ResponseEntity.ok(a);
+    public ResponseEntity<ApprovalDTO> approve(@PathVariable Long id,
+                                               @RequestBody(required = false) ApprovalStatusUpdateDTO dto) {
+        String notes = dto != null ? dto.getNotes() : null;
+        return ResponseEntity.ok(approvalService.approveRequest(id, notes));
     }
 
     @PostMapping("/{id}/reject")
-    public ResponseEntity<Approval> reject(@PathVariable Long id, @RequestBody RejectRequest rr) {
-        Approval a = approvalRepo.findById(id).orElseThrow();
-        a.setStatus(RequestStatus.REJECTED);
-        a.setReason(rr.getReason());
-        approvalRepo.save(a);
-        return ResponseEntity.ok(a);
-    }
-
-    public static class RejectRequest {
-        private String reason;
-        public String getReason(){return reason;}
-        public void setReason(String reason){this.reason = reason;}
+    public ResponseEntity<ApprovalDTO> reject(@PathVariable Long id,
+                                              @RequestBody ApprovalStatusUpdateDTO dto) {
+        return ResponseEntity.ok(approvalService.rejectRequest(id, dto.getStatus(), dto.getNotes()));
     }
 }

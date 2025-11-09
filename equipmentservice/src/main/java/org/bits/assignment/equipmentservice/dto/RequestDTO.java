@@ -1,6 +1,5 @@
-package org.bits.assignment.equipmentservice.entity;
+package org.bits.assignment.equipmentservice.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,37 +7,18 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "approvals")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Approval {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RequestDTO {
     private Long id;
-
     private String userId;
-    private String userName;
-
     private String equipmentId;
     private String equipmentName;
-
     private LocalDate requestDate;
     private LocalDate returnDate;
-
-    private String reason;
-
-    @Enumerated(EnumType.STRING)
-    private Status status;
-
     private String notes;
-
+    private String status;
     private LocalDate createdAt;
-
-    public enum Status {
-        PENDING, APPROVED, REJECTED
-    }
 }

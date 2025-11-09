@@ -1,6 +1,5 @@
-package org.bits.assignment.equipmentservice.entity;
+package org.bits.assignment.equipmentservice.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,18 +8,12 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
-@Table(name = "equipment")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Equipment {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EquipmentDTO {
     private Long id;
-
     private String name;
     private String category;
     private String description;
@@ -28,16 +21,9 @@ public class Equipment {
     private int available;
     private String condition;
     private String location;
-
-    @ElementCollection
-    @CollectionTable(name = "equipment_specifications", joinColumns = @JoinColumn(name = "equipment_id"))
-    @Column(name = "specifications")
     private List<String> specifications;
-
-
     private String usageInstructions;
     private String restrictions;
-
     private LocalDate lastMaintenance;
-    private int maintenanceInterval; // in days
+    private int maintenanceInterval;
 }
